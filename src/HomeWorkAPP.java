@@ -1,44 +1,50 @@
 public class HomeWorkAPP {
     public static void main(String[] args) {
-         printThreeWords();
-        CheckSumSign();
-        printColor();
-        compareNumbers();
-    }
+    System.out.println("Задание.1");
+    int a = 0;
+    int b = 1;
+    boolean isBetween = isSumBetween10and20 (a , b);
+    System.out.println (isBetween);
 
-    public static void printThreeWords() {
-        System.out.println("Orange");
-        System.out.println("Banana");
-        System.out.println("Apple");
-    }
+    System.out.println("Задание.2");
+    printSignOf ( 13);
 
-    public static void CheckSumSign(){
-        int a = 15;
-        int b = 4;
-        int c = a + b;
-        if (c >= 0) {
-            System.out.println("Сумма положительная");
+    System.out.println("Задание.3");
+    boolean isNegative = isNegative ( -7);
+    System.out.println (isNegative);
+
+    System.out.println("Задание.4");
+    print("Привет, земляне!", 7);
+
+    System.out.println("Задание.5");
+    boolean isLeap = isLeapOfYear (1962);
+    System.out.println(isLeap);
+    }
+    public static boolean isSumBetween10and20 (int left, int right){
+        int sum = left + right;
+        return 10 < sum && sum <= 20;
+    }
+    public static void printSignOf (int number){
+        if (number >= 0){
+        System.out.println("Число положительное");
         } else {
-            System.out.println("Сумма отрицательная");
+        System.out.println("Число отрицательное");
         }
-        }
-    public static void printColor(){
-        int value = 77;
-        if (value <= 0){
-            System.out.println("Красный");
-        } if (value <= 100){
-            System.out.println("Желтый");
-        } if (value > 100){
-            System.out.println("Зеленый");
+
+    }
+    public static boolean isNegative (int number){
+        return (number < 0);
+    }
+    public static void print(String messege, int count){
+        for (int i = 0; i < count; i++){
+            System.out.println(messege);
         }
     }
-    public static void compareNumbers(){
-        int a = 5;
-        int b = 17;
-        if (a >= b){
-            System.out.println("a >= b");
+    public static boolean isLeapOfYear (int year){
+        if ((year % 4 == 0 && year % 100 !=0) || year % 400 == 0){
+        return true;
         } else {
-            System.out.println("a < b");
+        return false;
         }
     }
 }
